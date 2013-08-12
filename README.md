@@ -1,14 +1,13 @@
 # naan
 
-A Clojure library designed to ... well, that part is up to you.
+CRUD functions for using Korma SQL
 
 ## Usage
 
-FIXME
+TBD
 
 ## License
 
-Copyright © 2013 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Copyright © 2013 Stephen Sloan
+Sponsored by Rafter, Inc.
+MIT Licensed

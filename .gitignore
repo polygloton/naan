@@ -1,6 +1,9 @@
 /target
+/targets/
 /classes
 /checkouts
+/lib/
+/classes/
 pom.xml
 pom.xml.asc
 *.jar
@@ -9,3 +12,4 @@ pom.xml.asc
 .lein-failures
 .lein-plugins
 .lein-repl-history
+pom.xml
