@@ -8,6 +8,6 @@ TBD
 
 ## License
 
-Copyright © 2013 Stephen Sloan
-Sponsored by Rafter, Inc.
-MIT Licensed
+- Copyright © 2013 Stephen Sloan
+- Sponsored by Rafter, Inc.
+- MIT Licensed
