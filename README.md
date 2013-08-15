@@ -30,7 +30,7 @@ That's not bad.  But naan is a bit shorter.
 
 Meh.  That isn't much different.  Now read that user using a korma select.
 
-```cljure
+```clojure
 (first
   (select users
     (where {:id [= 1]})
