@@ -1,5 +1,5 @@
 (defproject naan "0.1.0-SNAPSHOT"
-  :description "naan goes well with korma"
+  :description "Naan provides CRUD functions for working with Korma entities"
   :url "https://github.com/polygloton/naan"
   :license {:name "MIT"
             :url "http://opensource.org/licenses/MIT"}
