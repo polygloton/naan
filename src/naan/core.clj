@@ -86,7 +86,7 @@
         (korma/where {number-key [= key]})))))
 
 (defmethod read :string [entity key]
-  (let [string-key (get-string-key)]
+  (let [string-key (get-string-key entity)]
     (first
       (korma/select entity
         (korma/where {string-key [= key]})))))
