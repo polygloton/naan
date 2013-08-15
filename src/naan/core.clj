@@ -83,18 +83,21 @@
   (let [number-key (get-number-key entity)]
     (first
       (korma/select entity
-        (korma/where {number-key [= key]})))))
+        (korma/where {number-key [= key]})
+        (korma/limit 1)))))
 
 (defmethod read :string [entity key]
   (let [string-key (get-string-key entity)]
     (first
       (korma/select entity
-        (korma/where {string-key [= key]})))))
+        (korma/where {string-key [= key]})
+        (korma/limit 1)))))
 
 (defmethod read :map [entity where-map]
   (first
     (korma/select entity
-      (korma/where where-map))))
+      (korma/where where-map)
+      (korma/limit 1))))
 
 (defmethod read :default [_ _]
   (bad-multimethod-key))

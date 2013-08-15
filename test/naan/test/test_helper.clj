@@ -6,7 +6,7 @@
     [clojure.string :only [lower-case upper-case]]))
 
 (defn create-tables! []
-  (exec-raw ["CREATE TABLE USERS(id INT PRIMARY KEY, FIRST VARCHAR(255), LAST VARCHAR(255));"]))
+  (exec-raw ["CREATE TABLE USERS(ID INT PRIMARY KEY, FIRST VARCHAR(255), LAST VARCHAR(255));"]))
 
 (defn drop-tables! []
   (exec-raw ["DROP TABLE IF EXISTS USERS;"]))
