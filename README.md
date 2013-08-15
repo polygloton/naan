@@ -33,7 +33,7 @@ Meh.  That isn't much different.  Now read that user using a korma select.
 ```clojure
 (first
   (select users
-    (where {:id [= 1]})
+    (where {:id 1})
     (limit 1)))
 ```
 
