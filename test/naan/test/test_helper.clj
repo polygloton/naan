@@ -2,7 +2,7 @@
   (:use
     [korma.db :only [h2 create-db]]
     [korma.core :only [create-entity exec-raw pk database]]
-    [naan.utilities.korma-helpers :only [attributes entity-fields-from-attributes]]
+    [naan.korma-helpers :only [attributes entity-fields-from-attributes]]
     [clojure.string :only [lower-case upper-case]]))
 
 (defn create-tables! []

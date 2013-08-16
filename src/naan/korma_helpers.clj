@@ -1,4 +1,4 @@
-(ns naan.utilities.korma-helpers
+(ns naan.korma-helpers
   (:require
     [naan.core :as core]
     [korma.core :as korma]
