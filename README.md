@@ -126,9 +126,13 @@ Or maybe we just want to override the default.
   (binding [*string-key* :owner] (naan/read cats "Granger"))
 ```
 
+## Credit and copyright
+
+Naan is Copyright © 2013 Stephen Sloan, and is funded by [Rafter.com](http://www.rafter.com "Rafter.com")
+
+![Rafter Logo](http://rafter-logos.s3.amazonaws.com/rafter_github_logo.png "Rafter")
+
 
 ## License
 
-- Copyright © 2013 Stephen Sloan
-- Sponsored by Rafter, Inc.
-- MIT Licensed
+Released under a MIT style License, see LICENSE for details.
