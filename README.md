@@ -1,8 +1,16 @@
 # naan
 
-Naan provides CRUD functions for working with Korma entities.
+Naan provides CRUD functions for working with [Korma](http://sqlkorma.com/) entities.
 
 What is naan?  It isn't korma.  It doesn't replace korma.  It doesn't wrap around korma.  It's just bread... er... CRUD for Korma.  It is a nice-to-have that goes well with korma.  Korma is excellent and does many things very well.  However, I do find that for create, read, update, and destroy operations, I really want to DRY-up my code.  Nann provides these four functions, and a few more helpers.  Try naan with korma, its satisfying... tasty even.
+
+## Assumptions
+
+- You are using korma, of course.
+- You do a lot of simple CRUD operations and are tired of writing the same code.
+- Your tables have an integer key column ('id' by default) and a string candidate key column ('name' by default).  Each of these are optional and configurable.
+- Naan provides little more than simple CRUD helpers, so it assumes that you will write more complex SQL using komra. Naan shouldn't ever get in your way.
+- You can customize your entity definitions when you want to override naan defaults for a particular table.
 
 ## Usage
 
