@@ -40,7 +40,7 @@ Meh.  That isn't much different.  Now read that user using a korma select.
 And using naan read.
 
 ```clojure
-(read users {:id 1})
+(read users 1)
 ```
 
 That's a very straightforward helper function.  Let's see updating with korma update.
@@ -68,14 +68,14 @@ Finally destroying in korma.
 And again with naan.
 
 ```clojure
-(delete users 1)
+(destroy users 1)
 ```
 
 CRUD with naan makes korma more satisfying.
 
 ## String keys
 
-It is pretty common to use an 'id' column on our tables.  I blame rails.  It seems like we also commonly give things names, and I want CRUD to just work.
+It is pretty common to use an 'id' column on our tables.  It seems like we also commonly give things names, and CRUD should just work.
 
 ```clojure
 (defentity cats
@@ -87,7 +87,7 @@ It is pretty common to use an 'id' column on our tables.  I blame rails.  It see
 (read cats "Crookshanks")
 ```
 
-We should also be able to specify another string key.
+We should also be able to specify an alternate string key.
 
 ```clojure
 (defentity cats
