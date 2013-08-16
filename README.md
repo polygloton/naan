@@ -116,8 +116,8 @@ We should also be able to specify an alternate string key.
   (korma/pk :id)
   (korma/database db))
 
-  (naan/create cats {:nickname "Crookshanks", :breed "Tabby", :color "Orange", :gender "M"})
-  (naan/read cats "Crookshanks")
+(naan/create cats {:nickname "Crookshanks", :breed "Tabby", :color "Orange", :gender "M"})
+(naan/read cats "Crookshanks")
 ```
 
 Or maybe we just want to override the default.
@@ -129,8 +129,8 @@ Or maybe we just want to override the default.
   (korma/pk :id)
   (korma/database db))
 
-  (naan/create cats {:name "Crookshanks", :owner "Granger" :breed "Tabby", :color "Orange", :gender "M"})
-  (binding [*string-key* :owner] (naan/read cats "Granger"))
+(naan/create cats {:name "Crookshanks", :owner "Granger" :breed "Tabby", :color "Orange", :gender "M"})
+(binding [*string-key* :owner] (naan/read cats "Granger"))
 ```
 
 ### Using Maps
@@ -143,10 +143,10 @@ Maps can also be used instead of keys.
   (korma/pk :id)
   (korma/database db))
 
-  (naan/create cats {:name "Crookshanks", :breed "Tabby", :color "Orange", :gender "M"})
-  (naan/read cats {:color "Orange"})
-  (naan/update cats {:color "Orange"} {:color "Tawny"})
-  (naan/destroy cats {:breed "Tabby"})
+(naan/create cats {:name "Crookshanks", :breed "Tabby", :color "Orange", :gender "M"})
+(naan/read cats {:color "Orange"})
+(naan/update cats {:color "Orange"} {:color "Tawny"})
+(naan/destroy cats {:breed "Tabby"})
 ```
 
 ## Copyright
