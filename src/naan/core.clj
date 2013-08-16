@@ -111,21 +111,24 @@
 
 (defmethod update :number [entity attributes key]
   (let [number-key (get-number-key entity)]
-    (binding [*time-now* (time-util/time-stamp-now)]
-      (korma/update entity
+    (binding [*time-now* (time-util/time-stamp-now)
+              *entity* entity]
+      (korma/update *entity*
         (korma/set-fields (updated-at attributes))
         (korma/where {number-key [= key]})))))
 
 (defmethod update :string [entity attributes key]
   (let [string-key (get-string-key entity)]
-    (binding [*time-now* (time-util/time-stamp-now)]
-      (korma/update entity
+    (binding [*time-now* (time-util/time-stamp-now)
+              *entity* entity]
+      (korma/update *entity*
         (korma/set-fields (updated-at attributes))
         (korma/where {string-key [= key]})))))
 
 (defmethod update :map [entity attributes where-map]
-  (binding [*time-now* (time-util/time-stamp-now)]
-    (korma/update entity
+  (binding [*time-now* (time-util/time-stamp-now)
+            *entity* entity]
+    (korma/update *entity*
       (korma/set-fields (updated-at attributes))
       (korma/where where-map))))
 
