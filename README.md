@@ -145,7 +145,7 @@ Maps can also be used instead of keys.
 
 (naan/create cats {:name "Crookshanks", :breed "Tabby", :color "Orange", :gender "M"})
 (naan/read cats {:color "Orange"})
-(naan/update cats {:color "Orange"} {:color "Tawny"})
+(naan/update cats {:color "Tawny"} {:color "Orange"})
 (naan/destroy cats {:breed "Tabby"})
 ```
 
