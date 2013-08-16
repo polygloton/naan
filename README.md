@@ -20,7 +20,6 @@ What is naan?  It isn't korma.  It doesn't replace korma.  It doesn't wrap aroun
 (ns some.namespace
   (:require
     [korma.core :as korma]
-    [korma.db :as db]
     [naan.core :as naan]))
 ```
 
@@ -132,6 +131,22 @@ Or maybe we just want to override the default.
 
   (naan/create cats {:name "Crookshanks", :owner "Granger" :breed "Tabby", :color "Orange", :gender "M"})
   (binding [*string-key* :owner] (naan/read cats "Granger"))
+```
+
+### Using Maps
+
+Maps can also be used instead of keys.
+
+```clojure
+(korma/defentity cats
+  (korma/entity-fields :name :breed :color :gender)
+  (korma/pk :id)
+  (korma/database db))
+
+  (naan/create cats {:name "Crookshanks", :breed "Tabby", :color "Orange", :gender "M"})
+  (naan/read cats {:color "Orange"})
+  (naan/update cats {:color "Orange"} {:color "Tawny"})
+  (naan/destroy cats {:breed "Tabby"})
 ```
 
 ## Copyright
