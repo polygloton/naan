@@ -20,8 +20,10 @@
 (defn- has-attr? [entity attr]
   (some #{attr} (::attributes entity)))
 
-(defn- has-field? [entity field]
-  (some #{field} (keys (korma/fields entity))))
+(defn has-field? [entity field]
+  (some #{field} (map
+                    #(keyword (last (clojure.string/split % #"\.")))
+                    (:fields entity))))
 
 (defn- updated-at [attributes]
   (if (some #{:updated_at} (::attributes *entity*))
