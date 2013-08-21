@@ -20,6 +20,9 @@
 (defn- has-attr? [entity attr]
   (some #{attr} (::attributes entity)))
 
+(defn- has-field? [entity field]
+  (some #{field} (:fields entity)))
+
 (defn- updated-at [attributes]
   (if (some #{:updated_at} (::attributes *entity*))
     (assoc attributes :updated_at *time-now*)
@@ -47,6 +50,7 @@
   (cond
     (some #{::string-key} (keys entity)) (::string-key entity)
     (has-attr? entity *string-key*) *string-key*
+    (has-field? entity *string-key*) *string-key*
     :else (throw (IllegalArgumentException. (str "Can't find " (:name entity) " by string key " *string-key*)))))
 
 (defn set-number-key [entity value]
@@ -56,6 +60,7 @@
   (cond
     (some #{::number-key} (keys entity)) (::number-key entity)
     (has-attr? entity *number-key*) *number-key*
+    (has-field? entity *number-key*) *number-key*
     :else (throw (IllegalArgumentException. (str "Can't find " (:name entity) " by number key " *number-key*)))))
 
 
