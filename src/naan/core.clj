@@ -21,7 +21,7 @@
   (some #{attr} (::attributes entity)))
 
 (defn- has-field? [entity field]
-  (some #{field} (:fields entity)))
+  (some #{field} (keys (korma/fields entity))))
 
 (defn- updated-at [attributes]
   (if (some #{:updated_at} (::attributes *entity*))
