@@ -148,6 +148,20 @@ Maps can also be used instead of keys.
 (naan/destroy cats {:breed "Tabby"})
 ```
 
+### With timestamps
+
+Naan can update created_at and update_at timestamps, as appropriate, on CRUD operations.  It requires adding a bit of boiler-plate to your entity definitions, but it pays off when timestamps (a la Rails) just work.
+
+```clojure
+(require '[naan.korma-helpers :as helpers]
+
+(korma/defentity cats
+  (helpers/attributes :name :breed :color :gender :created_at :updated_at)
+  (helpers/entity-fields-from-attributes)
+  (korma/pk :id)
+  (korma/database db))
+```
+
 ## Copyright
 
 Naan is Copyright © 2013 Stephen Sloan, and is funded by [Rafter.com](http://www.rafter.com "Rafter.com").  It is MIT licensed.
