@@ -124,12 +124,11 @@ Or maybe we just want to override the default.
 
 ```clojure
 (korma/defentity cats
-  (korma/entity-fields :nickname :owner :breed :color :gender)
-  (naan/set-string-key :nickname)
+  (korma/entity-fields :name :owner :breed :color :gender)
   (korma/pk :id)
   (korma/database db))
 
-(naan/create cats {:name "Crookshanks", :owner "Granger" :breed "Tabby", :color "Orange", :gender "M"})
+(naan/create cats {:name "Crookshanks", :owner "Granger", :breed "Tabby", :color "Orange", :gender "M"})
 (binding [*string-key* :owner] (naan/read cats "Granger"))
 ```
 
