@@ -9,7 +9,7 @@ What is naan?  It isn't korma.  It doesn't replace korma.  It doesn't wrap aroun
 - You are using korma, of course.
 - You do a lot of simple CRUD operations and are tired of writing the same code.
 - Your tables have an integer key column ('id' by default) and a string candidate key column ('name' by default).  Each of these are optional and configurable.
-- Naan provides little more than simple CRUD helpers, so it assumes that you will write more complex SQL using komra. Naan shouldn't ever get in your way.
+- Naan provides little more than simple CRUD helpers, so it assumes that you will write more complex SQL using korma. Naan shouldn't ever get in your way.
 - You can customize your entity definitions when you want to override naan defaults for a particular table.
 
 ## Usage
