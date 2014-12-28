@@ -1,7 +1,5 @@
 (ns naan.core
   (:refer-clojure :exclude [read])
-  (:use
-    [alex-and-georges.debug-repl])
   (:require
     [naan.utilities.time :as time-util]
     [korma.core :as korma]))
@@ -33,7 +31,6 @@
     attributes))
 
 (defn- created-at [attributes]
-  (debug-repl)
   (if (some #{:created_at} (::attributes *entity*))
     (assoc attributes :created_at *time-now*)
     attributes))
