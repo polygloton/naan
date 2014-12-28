@@ -77,7 +77,9 @@
 (defn create [entity attributes]
   (binding [*time-now* (time-util/time-stamp-now)
             *entity* entity]
-    (create-raw *entity* (time-stamps attributes))))
+    (if (map? attributes)
+      (create-raw *entity* (time-stamps attributes))
+      (create-raw *entity* (map #(time-stamps %) attributes)))))
 
 (defmulti read
   (fn [_ key]
