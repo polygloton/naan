@@ -1,5 +1,7 @@
 (ns naan.core
   (:refer-clojure :exclude [read])
+  (:use
+    [alex-and-georges.debug-repl])
   (:require
     [naan.utilities.time :as time-util]
     [korma.core :as korma]))
@@ -31,6 +33,7 @@
     attributes))
 
 (defn- created-at [attributes]
+  (debug-repl)
   (if (some #{:created_at} (::attributes *entity*))
     (assoc attributes :created_at *time-now*)
     attributes))
@@ -77,7 +80,9 @@
 (defn create [entity attributes]
   (binding [*time-now* (time-util/time-stamp-now)
             *entity* entity]
-    (create-raw *entity* (time-stamps attributes))))
+    (if (map? attributes)
+      (create-raw *entity* (time-stamps attributes))
+      (create-raw *entity* (map #(time-stamps %) attributes)))))
 
 (defmulti read
   (fn [_ key]

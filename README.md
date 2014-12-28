@@ -48,6 +48,12 @@ That's not bad.  But naan is a bit shorter.
 (naan/create users {:first "Tasty", :last "SQL"})
 ```
 
+Or, supply multiple entities using a collection:
+
+```clojure
+(naan/create users [{:first "Tasty", :last "SQL"} {:first "Crunchy" :last "Naan"}])
+```
+
 Meh.  That isn't much different.  Now read that user using a korma select.
 
 ```clojure
@@ -61,6 +67,12 @@ And using naan read.
 
 ```clojure
 (naan/read users 1)
+```
+
+You can also find entities by other fields.
+
+```clojure
+(naan/read users {:first "Crunchy", :last "Naan"})
 ```
 
 That's a very straightforward helper function.  Let's see updating with korma update.
